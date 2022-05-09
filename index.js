@@ -21,7 +21,9 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const murl = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.iz1vu.mongodb.net/blogDB?retryWrites=true&w=majority`
-mongoose.connect(murl)
+console.log(murl);
+mongoose.connect(murl,
+   );
 
 
 app.use('/api', apiRouter);
