@@ -3,8 +3,8 @@ import jwt from 'jsonwebtoken'
 import fs from 'fs'
 import crypto from 'crypto'
 
-let PUBLIC_KEY = fs.readFileSync('C:/Users/GÜNERARDAIŞIK/Desktop/spirolina/yazilim/js projects/blog-app/server/keys/public.pem', 'utf8');
-let PRIVATE_KEY = fs.readFileSync('C:/Users/GÜNERARDAIŞIK/Desktop/spirolina/yazilim/js projects/blog-app/server/keys/private.pem', 'utf8');
+let PUBLIC_KEY = process.env.public;
+let PRIVATE_KEY = process.env.private;
 
 export function generateSignToken(payload) {
     const token = jwt.sign(payload, {
